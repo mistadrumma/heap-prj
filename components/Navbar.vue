@@ -1,0 +1,68 @@
+<template>
+  <b-navbar type="is-white">
+    <template #brand>
+      <b-navbar-item>
+          <b-icon
+            pack="fas"
+            icon="bars"
+            size="is-medium">
+          </b-icon>
+      </b-navbar-item>
+      <b-navbar-item tag="router-link" :to="{ path: '/' }">
+        <img
+          src="https://bulma.io/images/bulma-logo.png" width="112" height="28"
+          alt="Lightweight UI components for Vue.js based on Bulma"
+        >
+      </b-navbar-item>
+    </template>
+    <template #start>
+      <b-navbar-item v-for="(item, key) of menuItems"  tag="router-link" :key="key" :to="item.to">
+        {{ item.title }}
+      </b-navbar-item>
+    </template>
+
+    <template #end>
+      <b-navbar-item tag="div">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </b-navbar-item>
+    </template>
+  </b-navbar>
+</template>
+
+<script>
+export default {
+  name: "Navbar",
+  data () {
+    return {
+      menuItems: [
+        {
+          title: 'Горячее',
+          icon: 'home',
+          to: { name: 'index' }
+        },
+        {
+          title: 'Новое',
+          icon: 'lightbulb',
+          to: { name: 'new' }
+        },
+        {
+          title: 'Сообщества',
+          icon: 'lightbulb',
+          to: { name: 'subheap' }
+        }
+      ]
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
