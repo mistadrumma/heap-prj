@@ -1,6 +1,7 @@
 <template>
   <b-navbar type="is-white">
     <template #brand>
+
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <img
           src="https://bulma.io/images/bulma-logo.png" width="112" height="28"
