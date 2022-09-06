@@ -1,13 +1,6 @@
 <template>
   <b-navbar type="is-white">
     <template #brand>
-      <b-navbar-item>
-          <b-icon
-            pack="fas"
-            icon="bars"
-            size="is-medium">
-          </b-icon>
-      </b-navbar-item>
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <img
           src="https://bulma.io/images/bulma-logo.png" width="112" height="28"
@@ -17,7 +10,12 @@
     </template>
     <template #start>
       <b-navbar-item v-for="(item, key) of menuItems"  tag="router-link" :key="key" :to="item.to">
-        {{ item.title }}
+        <b-icon
+          pack="fas"
+          :icon="item.icon"
+          size="is-small">
+        </b-icon>
+        <span class="ml-2">{{ item.title }}</span>
       </b-navbar-item>
     </template>
 
@@ -44,17 +42,17 @@ export default {
       menuItems: [
         {
           title: 'Горячее',
-          icon: 'home',
+          icon: 'fire',
           to: { name: 'index' }
         },
         {
           title: 'Новое',
-          icon: 'lightbulb',
+          icon: 'clock',
           to: { name: 'new' }
         },
         {
           title: 'Сообщества',
-          icon: 'lightbulb',
+          icon: 'list',
           to: { name: 'subheap' }
         }
       ]

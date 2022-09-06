@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <Navbar />
 
     <section class="main-content columns">
@@ -22,11 +22,12 @@
 <!--        </ul>-->
 <!--      </aside>-->
 
-      <div class="container column is-10">
+      <div class="container column is-half">
         <Nuxt />
       </div>
+
     </section>
-  </div>
+  </section>
 </template>
 
 <script>
