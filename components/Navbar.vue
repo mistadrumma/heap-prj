@@ -2,7 +2,7 @@
   <b-navbar type="is-white">
     <template #brand>
 
-      <b-navbar-item tag="router-link" :to="{ path: '/' }">
+      <b-navbar-item  tag="router-link" :to="{ path: '/posts' }">
         <img
           src="https://bulma.io/images/bulma-logo.png" width="112" height="28"
           alt="Lightweight UI components for Vue.js based on Bulma"
@@ -44,7 +44,7 @@ export default {
         {
           title: 'Горячее',
           icon: 'fire',
-          to: { name: 'index' }
+          to: { name: 'posts' }
         },
         {
           title: 'Новое',

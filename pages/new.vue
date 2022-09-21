@@ -1,6 +1,6 @@
 <template>
 <section class="section">
-  <Postlist />
+<h1>Новое</h1>
 </section>
 </template>
 

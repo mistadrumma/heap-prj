@@ -1,52 +1,36 @@
 <template>
-  <div class="card">
-    <header class="card-header">
-      <figure class="image is-24x24 mt-3 ml-3">
-        <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-      </figure>
-      <p class="card-header-title">
-        Маркетинг
-        <span class="subtitle is-6 pl-1">RobberNoetic</span>
-      </p>
-
-      <button class="card-header-icon" aria-label="more options">
-        <b-icon
-          pack="fas"
-          icon="ellipsis-vertical"
-          size="is-small">
-        </b-icon>
-      </button>
-    </header>
-    <div class="card-content">
-      <p class="title is-4 mb-3">
-        Власти США запретили поставки передовых видеоускорителей от AMD и Nvidia в Китай и Россию
-      </p>
-      <p>Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции позволяет оценить значение соответствующий условий активизации. Таким образом начало повседневной работы по формированию позиции требуют определения и уточнения модели развития.</p>
-    </div>
-    <div class="card-image">
-
-      <b-image
-        src="https://leonardo.osnova.io/92f6789c-a503-5b47-a918-2301de3c94e3/-/preview/1100/-/format/webp/"
-        alt="A random image"
-        ratio="6by4"
-      ></b-image>
-    </div>
-    <footer class="card-footer">
-      <b-button class="card-header-icon" size="is-small" icon-pack="fas" icon="ellipsis-vertical" />
-      <a href="#" class="card-footer-item">Save</a>
-      <a href="#" class="card-footer-item">Edit</a>
-      <a href="#" class="card-footer-item">Delete</a>
-    </footer>
+  <section class="section">
+  <div v-for="post in posts" :key="post.id" @click.prevent="openPost(post)">
+    <Post :id="post.id" :title="post.title" :body="post.body" ></Post>
 
   </div>
-
-
+  </section>
 </template>
 
 <script>
+import Post from "~/components/Post";
 export default {
   name: "Postlist",
+  comments: {
+    Post
+  },
+  props: {
+    posts: {
+      type: Array,
+      required: true
+    }
+  },
+  methods: {
+    openPost(post) {
+      this.$router.push('/posts/' + post.id)
+    }
+  }
 
+  // data: () => ({
+  //   posts: () => ({
+  //     posts: this.posts
+  //   })
+  // }),
 }
 </script>
 
