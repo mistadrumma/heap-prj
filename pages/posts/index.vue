@@ -1,12 +1,9 @@
 <template>
   <section class="section">
-    <Postlist :posts="posts">
+    <div v-for="post in posts" :key="post.id" @click.prevent="openPost(post)">
+      <Post :id="post.id" :title="post.title" :body="post.body" ></Post>
 
-    </Postlist>
-    <!--<div v-for="post in posts" :key="post.id">-->
-    <!--  <Post :title="post.title" :body="post.body"></Post>-->
-
-    <!--</div>-->
+    </div>
   </section>
 </template>
 
@@ -26,6 +23,11 @@ export default {
   computed: {
     posts(){
       return this.$store.getters['posts/posts']
+    }
+  },
+  methods: {
+    openPost(post) {
+      this.$router.push('/posts/' + post.id)
     }
   },
 }
