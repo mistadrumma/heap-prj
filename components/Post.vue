@@ -8,7 +8,6 @@
         Маркетинг
         <span class="subtitle is-6 pl-1">RobberNoetic</span>
       </p>
-
       <button class="card-header-icon" aria-label="more options">
         <b-icon
           pack="fas"
@@ -19,23 +18,40 @@
     </header>
     <div class="card-content">
       <p class="title is-4 mb-3" >
+        <a class="has-text-dark" @click.prevent="openPost(id)">
         {{title}}
+        </a>
       </p>
-      <p>{{body}}</p>
+      <p>{
+        <a class="has-text-dark" @click.prevent="openPost(id)">
+          {{body}}
+        </a>
+      </p>
     </div>
     <div class="card-image">
-
-      <b-image
-        src="https://leonardo.osnova.io/92f6789c-a503-5b47-a918-2301de3c94e3/-/preview/1100/-/format/webp/"
-        alt="A random image"
-        ratio="6by4"
-      ></b-image>
+      <a class="has-text-dark" @click.prevent="openPost(id)">
+        <b-image
+          src="https://leonardo.osnova.io/92f6789c-a503-5b47-a918-2301de3c94e3/-/preview/1100/-/format/webp/"
+          alt="A random image"
+          ratio="6by4"
+        ></b-image>
+      </a>
     </div>
     <footer class="card-footer">
-      <b-button class="card-header-icon" size="is-small" icon-pack="fas" icon="ellipsis-vertical" />
-      <a href="#" class="card-footer-item">Save</a>
-      <a href="#" class="card-footer-item">Edit</a>
-      <a href="#" class="card-footer-item">Delete</a>
+      <div class="card-footer-item">
+        <b-icon
+          pack="fas"
+          icon="comment"
+          custom-class="fa-regular"
+          size="is-medium">
+        </b-icon>
+        <span class="ml-2">15</span>
+      </div>
+      <div class="card-footer-item">
+        <fa :icon="['fas', 'comment']" />
+        <span class="ml-2">15</span>
+      </div>
+
     </footer>
 
   </div>
@@ -56,6 +72,11 @@ export default {
     body: {
       type: String,
       required: true
+    }
+  },
+  methods: {
+    openPost(id) {
+      this.$router.push('/posts/' + id)
     }
   },
 

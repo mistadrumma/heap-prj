@@ -34,6 +34,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/fontawesome'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -62,7 +63,7 @@ export default {
         set: '@fortawesome/free-solid-svg-icons',
         icons: ['fas']
       }
-    ]
+    ],
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
