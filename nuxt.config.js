@@ -20,6 +20,10 @@ export default {
   css: [
     '@/assets/bulma-vars.scss'
   ],
+  loading: {
+    color: 'blue',
+    height: '5px'
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
