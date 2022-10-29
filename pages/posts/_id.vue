@@ -21,5 +21,7 @@ export default {
 </script>
 
 <style scoped>
+/*напиши стили для компонента*/
+
 
 </style>
