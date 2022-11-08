@@ -22,7 +22,7 @@
         {{title}}
         </a>
       </p>
-      <p>{
+      <p>
         <a class="has-text-dark" @click.prevent="openPost(id)">
           {{body}}
         </a>
@@ -37,23 +37,44 @@
         ></b-image>
       </a>
     </div>
-    <footer class="card-footer">
-      <div class="card-footer-item">
-        <b-icon
-          pack="fas"
-          icon="comment"
-          custom-class="fa-regular"
-          size="is-medium">
-        </b-icon>
-        <span class="ml-2">15</span>
+    <div class="content-footer">
+      <div class="content-footer__item">
+        <div class="comment_counter">
+          <a href="#" class="comment_counter_count has-text-grey-light">
+            <span class="comment_counter_ico">
+              <b-icon
+                pack="fas"
+                icon="comment"
+                size="is-medium">
+              </b-icon>
+            </span>
+            <span class="comment_counter_counter_value">1</span>
+          </a>
+        </div>
+        </div>
+      <div class="content-footer__item">
+          <div class="bookmarks has-text-grey-light">
+              <span class="bookmarks_ico">
+                <b-icon
+                  pack="fas"
+                  icon="bookmark"
+                  size="is-medium">
+                </b-icon>
+              </span>
+          </div>
+        </div>
+      <div class="content-footer__item">
+        <div class="share has-text-grey-light">
+            <span class="share_ico">
+              <b-icon
+                pack="fas"
+                icon="share"
+                size="is-medium">
+              </b-icon>
+            </span>
+        </div>
       </div>
-      <div class="card-footer-item">
-        <fa :icon="['fas', 'comment']" />
-        <span class="ml-2">15</span>
-      </div>
-
-    </footer>
-
+    </div>
   </div>
 </template>
 
@@ -86,6 +107,72 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+
+// Общие стили для всех компонента .content-footer (подвал поста)
+.content-footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 15px;
+  .content-footer__item {
+    display: flex;
+    align-items: center;
+    .comment_counter {
+      display: flex;
+      align-items: center;
+      margin-right: 1rem;
+      .comment_counter_count {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        .comment_counter_ico {
+          margin-right: 0.25rem;
+        }
+        .comment_counter_counter_value {
+          font-size: 0.75rem;
+        }
+      }
+      .comment_counter_ico {
+        margin-right: 0.5rem;
+
+
+      }
+      .comment_counter_counter_value {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+    .bookmarks {
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      .bookmarks_ico {
+        margin-right: 0.5rem;
+      }
+    }
+    .share {
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      .share_ico {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+
+
+
+
 
 </style>
