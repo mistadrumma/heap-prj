@@ -6,7 +6,7 @@
       </figure>
       <p class="card-header-title">
         Маркетинг
-        <span class="subtitle is-6 pl-1">RobberNoetic</span>
+        <span class="subtitle is-6 pl-1">Robber Noetic</span>
       </p>
       <button class="card-header-icon" aria-label="more options">
         <b-icon
