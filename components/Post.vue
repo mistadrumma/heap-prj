@@ -100,11 +100,8 @@ export default {
       this.$router.push('/posts/' + id)
     }
   },
-
-
-
-
 }
+
 </script>
 
 <style scoped lang="scss">
